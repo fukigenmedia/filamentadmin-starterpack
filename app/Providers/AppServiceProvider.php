@@ -32,5 +32,10 @@ class AppServiceProvider extends ServiceProvider
         Filament::serving(function (): void {
             Filament::registerTheme(mix('css/app.css'));
         });
+
+        Filament::registerNavigationGroups([
+            'Akun',
+            'Pengaturan',
+        ]);
     }
 }
