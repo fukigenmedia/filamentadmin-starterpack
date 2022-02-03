@@ -60,8 +60,7 @@ class UserResource extends Resource
                                 if ($livewire instanceof Pages\EditUser) {
                                     return 'kosongkan jika tidak ingin mengubah.';
                                 }
-                            })
-                            ->dehydrateStateUsing(fn ($state) => Hash::make($state)),
+                            }),
                         Forms\Components\TextInput::make('passwordConfirmation')
                             ->label('Konfirmasi Kata Sandi')
                             ->password()
@@ -69,6 +68,10 @@ class UserResource extends Resource
                             ->maxLength(255)
                             ->required(fn (Component $livewire): bool => $livewire instanceof Pages\CreateUser)
                             ->dehydrated(false),
+                        Forms\Components\BelongsToManyMultiSelect::make('roles')
+                            ->label('Peran')
+                            ->relationship('roles', 'name')
+                            ->required()
                     ])
                     ->columns([
                         'sm' => 2,
@@ -98,6 +101,10 @@ class UserResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('email')
                     ->label('Surel')
+                    ->searchable()
+                    ->sortable(),
+                Tables\Columns\BadgeColumn::make('roles.name')
+                    ->label('Peran')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
