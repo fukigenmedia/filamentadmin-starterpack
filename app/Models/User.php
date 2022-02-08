@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\LogActivities;
 use App\Models\Traits\UUID;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -13,7 +14,12 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements FilamentUser
 {
-    use HasApiTokens, HasFactory, Notifiable, UUID, HasRoles;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
+    use UUID;
+    use HasRoles;
+    use LogActivities;
 
     protected $fillable = [
         'name',

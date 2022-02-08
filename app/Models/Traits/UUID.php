@@ -5,7 +5,7 @@
  * UUID Model
  * ------------
  *
- * Membuat model support UUID untuk increment primary
+ * Create a UUID support model for the increment primary
  * by Fukigen Media
  * https://github.com/fukigenmedia
  */
@@ -19,7 +19,7 @@ trait UUID
     protected function initializeUUID()
     {
         static::creating(function ($model) {
-            if (! $model->getKey()) {
+            if (!$model->getKey()) {
                 $model->{$model->getKeyName()} = (string) Str::orderedUuid();
             }
         });
