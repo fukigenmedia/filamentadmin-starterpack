@@ -21,6 +21,8 @@ class RoleResource extends Resource
 
     protected static ?int $navigationSort = -1;
 
+    protected static ?string $slug = 'akun/peran';
+
     protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
@@ -162,9 +164,9 @@ class RoleResource extends Resource
     {
         return [
             'index' => Pages\ListRoles::route('/'),
-            'create' => Pages\CreateRole::route('/create'),
+            'create' => Pages\CreateRole::route('/tambah'),
             'view' => Pages\ViewRole::route('/{record}'),
-            'edit' => Pages\EditRole::route('/{record}/edit'),
+            'edit' => Pages\EditRole::route('/{record}/sunting'),
         ];
     }
 

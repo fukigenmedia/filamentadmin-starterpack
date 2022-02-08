@@ -26,6 +26,8 @@ class Profile extends Page implements HasForms
 
     protected static ?string $navigationLabel = 'Profil';
 
+    protected static ?string $slug = 'akun/profil';
+
     protected static ?int $navigationSort = -1;
 
     public $name;
