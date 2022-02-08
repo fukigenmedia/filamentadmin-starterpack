@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
 
         Filament::registerNavigationGroups([
             'Akun',
-            'Pengaturan',
+            'Sistem',
         ]);
     }
 }
