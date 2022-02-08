@@ -12,6 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
+use STS\FilamentImpersonate\Impersonate;
 
 class UserResource extends Resource
 {
@@ -114,6 +115,9 @@ class UserResource extends Resource
             ])
             ->filters([
                 //
+            ])
+            ->prependActions([
+                Impersonate::make('impersonate'),
             ]);
     }
 

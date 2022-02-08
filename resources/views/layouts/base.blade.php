@@ -26,6 +26,8 @@
     <body class="@yield('body-class')">
         @yield('content')
 
+        <x-impersonate::banner/>
+
         <!-- Livewire Styles -->
         @livewireScripts
 

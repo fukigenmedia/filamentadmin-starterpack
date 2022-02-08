@@ -12,7 +12,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "stechstudio/filament-impersonate": "^2.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

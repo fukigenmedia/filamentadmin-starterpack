@@ -38,4 +38,26 @@ class User extends Authenticatable implements FilamentUser
 
         return true;
     }
+
+    public function canImpersonate()
+    {
+        foreach ($this->getRoleNames() as $role) {
+            if (in_array($role, ['super_admin', 'admin'])) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function canBeImpersonated()
+    {
+        foreach ($this->getRoleNames() as $role) {
+            if (!in_array($role, ['super_admin'])) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
