@@ -14,8 +14,8 @@ return [
 
     'default_roles' => [
         'super_admin_role_name' => 'super_admin',
-        'filament_user' => [
-            'role_name' => 'filament_user',
+        'user' => [
+            'role_name' => 'user',
             'enabled' => true
         ],
     ],
@@ -37,6 +37,8 @@ return [
         'delete',
         'delete_any',
         'update',
+        'import',
+        'export',
     ],
 
     /*
