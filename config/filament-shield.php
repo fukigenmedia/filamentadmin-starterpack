@@ -14,7 +14,7 @@ return [
 
     'default_roles' => [
         'super_admin_role_name' => 'super_admin',
-        'user' => [
+        'filament_user' => [
             'role_name' => 'user',
             'enabled' => true
         ],
