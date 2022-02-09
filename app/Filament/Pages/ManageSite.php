@@ -3,12 +3,16 @@
 namespace App\Filament\Pages;
 
 use App\Settings\SiteSettings;
+use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Forms;
+use Filament\Facades\Filament;
 use Filament\Pages\SettingsPage;
 use Filament\Pages\Actions\ButtonAction;
 
 class ManageSite extends SettingsPage
 {
+    use HasPageShield;
+
     protected static string $settings = SiteSettings::class;
 
     protected static ?string $label = 'Situs';
@@ -35,7 +39,8 @@ class ManageSite extends SettingsPage
                         ->label('Nama Aplikasi')
                         ->required(),
                     Forms\Components\TextInput::make('slogan')
-                        ->label('Slogan'),
+                        ->label('Slogan')
+                        ->nullable(),
                     Forms\Components\Select::make('locale')
                         ->label('Bahasa')
                         ->options([
@@ -53,11 +58,13 @@ class ManageSite extends SettingsPage
                     Forms\Components\FileUpload::make('logo')
                         ->label('Logo Aplikasi')
                         ->directory('system')
-                        ->image(),
+                        ->image()
+                        ->nullable(),
                     Forms\Components\FileUpload::make('favico')
                         ->label('Ikon Aplikasi')
                         ->directory('system')
-                        ->image(),
+                        ->image()
+                        ->nullable(),
                 ]),
 
         ];
@@ -70,5 +77,22 @@ class ManageSite extends SettingsPage
                 ->label('Simpan')
                 ->submit('save'),
         ];
+    }
+
+    protected static function canAccessSettings(): bool
+    {
+        return Filament::auth()->user()->can(static::getPermissionName());
+    }
+
+    public function mount(): void
+    {
+        parent::mount();
+
+        abort_unless(static::canAccessSettings(), 403);
+    }
+
+    protected static function shouldRegisterNavigation(): bool
+    {
+        return static::canAccessSettings();
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\System\LogActivity;
+use App\Settings\SiteSettings;
 use Illuminate\Support\Facades\Request;
 
 /**
@@ -39,5 +40,12 @@ if (!function_exists('fukigen_log')) {
             'ip' => Request::ip(),
             'agent' => Request::header('user-agent'),
         ]);
+    }
+}
+
+if (!function_exists('setting')) {
+    function setting($setting)
+    {
+        return app(SiteSettings::class)->$setting;
     }
 }

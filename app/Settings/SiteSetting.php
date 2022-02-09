@@ -9,8 +9,8 @@ class SiteSettings extends Settings
     public string $name;
     public string $slogan;
     public string $locale;
-    public string $logo;
-    public string $favico;
+    public string|null $logo;
+    public string|null $favico;
 
     public static function group(): string
     {

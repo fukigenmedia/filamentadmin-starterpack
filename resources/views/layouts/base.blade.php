@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>@yield('title') - {{ env('APP_NAME') }}</title>
+        <title>@yield('title') - {{ setting('name') ? setting('name') : env('APP_NAME') }}</title>
 
         <!-- CORE -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -14,7 +14,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
 
         <!-- Icon -->
-        <link rel="shortcut icon" href="{{ asset('images/favicon.svg') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset(setting('favico') ? setting('favico') : 'images/favicon.svg') }}" type="image/x-icon">
 
         <!-- Livewire Styles -->
         @livewireStyles

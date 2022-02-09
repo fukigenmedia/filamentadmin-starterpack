@@ -62,7 +62,7 @@ return [
     */
 
     'entities' => [
-        'pages' => false,
+        'pages' => true,
         'widgets' => true,
         'resources' => true,
     ],
@@ -75,10 +75,10 @@ return [
     */
 
     'tabs' => [
-        'pages' => false,
+        'pages' => true,
         'widgets' => true,
         'resources' => true,
-        'custom_permissions' => false,
+        'custom_permissions' => true,
     ],
 
 
@@ -128,7 +128,8 @@ return [
 
     'except' => [
         'pages' => [
-            'Dashboard'
+            'Dashboard',
+            'Profile'
         ],
         'widgets' => [
             'AccountWidget',
