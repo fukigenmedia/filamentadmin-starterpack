@@ -888,16 +888,16 @@
         },
         {
             "name": "filament/filament",
-            "version": "v2.10.0",
+            "version": "v2.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/admin.git",
-                "reference": "5c82d641a66881d5ca4bf23e07f282a7b0fa6a5e"
+                "reference": "cb6893cecbb6d555092bb7b43d3cae99318691be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-filament/admin/zipball/5c82d641a66881d5ca4bf23e07f282a7b0fa6a5e",
-                "reference": "5c82d641a66881d5ca4bf23e07f282a7b0fa6a5e",
+                "url": "https://api.github.com/repos/laravel-filament/admin/zipball/cb6893cecbb6d555092bb7b43d3cae99318691be",
+                "reference": "cb6893cecbb6d555092bb7b43d3cae99318691be",
                 "shasum": ""
             },
             "require": {
@@ -944,20 +944,20 @@
                 "issues": "https://github.com/laravel-filament/filament/issues",
                 "source": "https://github.com/laravel-filament/filament"
             },
-            "time": "2022-02-07T21:49:20+00:00"
+            "time": "2022-02-08T12:12:49+00:00"
         },
         {
             "name": "filament/forms",
-            "version": "v2.10.0",
+            "version": "v2.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/forms.git",
-                "reference": "f27cfde6fa047ac82fe5c79ca366500c85f0b00b"
+                "reference": "76e4e2e9224e4e3a48ae8ef935d7445969efd5f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-filament/forms/zipball/f27cfde6fa047ac82fe5c79ca366500c85f0b00b",
-                "reference": "f27cfde6fa047ac82fe5c79ca366500c85f0b00b",
+                "url": "https://api.github.com/repos/laravel-filament/forms/zipball/76e4e2e9224e4e3a48ae8ef935d7445969efd5f7",
+                "reference": "76e4e2e9224e4e3a48ae8ef935d7445969efd5f7",
                 "shasum": ""
             },
             "require": {
@@ -1000,20 +1000,20 @@
                 "issues": "https://github.com/laravel-filament/filament/issues",
                 "source": "https://github.com/laravel-filament/filament"
             },
-            "time": "2022-02-07T21:49:07+00:00"
+            "time": "2022-02-08T12:12:41+00:00"
         },
         {
             "name": "filament/tables",
-            "version": "v2.10.0",
+            "version": "v2.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-filament/tables.git",
-                "reference": "7626636e9b1f1361d8dbb9f4b4ff248fe296e5f0"
+                "reference": "834fecca31788254b716b092b105f8e09906f6ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-filament/tables/zipball/7626636e9b1f1361d8dbb9f4b4ff248fe296e5f0",
-                "reference": "7626636e9b1f1361d8dbb9f4b4ff248fe296e5f0",
+                "url": "https://api.github.com/repos/laravel-filament/tables/zipball/834fecca31788254b716b092b105f8e09906f6ea",
+                "reference": "834fecca31788254b716b092b105f8e09906f6ea",
                 "shasum": ""
             },
             "require": {
@@ -1053,7 +1053,7 @@
                 "issues": "https://github.com/laravel-filament/filament/issues",
                 "source": "https://github.com/laravel-filament/filament"
             },
-            "time": "2022-02-07T21:49:14+00:00"
+            "time": "2022-02-08T12:11:43+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -1591,16 +1591,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.82.0",
+            "version": "v8.83.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "411d5243c58cbf12b0fc89cab1ceb50088968c27"
+                "reference": "29bc8779103909ebc428478b339ee6fa8703e193"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/411d5243c58cbf12b0fc89cab1ceb50088968c27",
-                "reference": "411d5243c58cbf12b0fc89cab1ceb50088968c27",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/29bc8779103909ebc428478b339ee6fa8703e193",
+                "reference": "29bc8779103909ebc428478b339ee6fa8703e193",
                 "shasum": ""
             },
             "require": {
@@ -1760,7 +1760,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-02-01T16:13:57+00:00"
+            "time": "2022-02-08T15:44:51+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -6316,12 +6316,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Barryvdh\\Debugbar\\": "src/"
-                },
                 "files": [
                     "src/helpers.php"
-                ]
+                ],
+                "psr-4": {
+                    "Barryvdh\\Debugbar\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -6813,16 +6813,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.13.1",
+            "version": "v1.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "b9749028732eca8080c26d01cd88a2f3549c2e3e"
+                "reference": "ede5e861549be2c3a8b789cdb34203a5aef5b92a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/b9749028732eca8080c26d01cd88a2f3549c2e3e",
-                "reference": "b9749028732eca8080c26d01cd88a2f3549c2e3e",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/ede5e861549be2c3a8b789cdb34203a5aef5b92a",
+                "reference": "ede5e861549be2c3a8b789cdb34203a5aef5b92a",
                 "shasum": ""
             },
             "require": {
@@ -6869,7 +6869,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-01-20T15:31:25+00:00"
+            "time": "2022-02-08T14:14:12+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -7871,11 +7871,11 @@
                 }
             },
             "autoload": {
-                "classmap": [
-                    "src/"
-                ],
                 "files": [
                     "src/Framework/Assert/Functions.php"
+                ],
+                "classmap": [
+                    "src/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
