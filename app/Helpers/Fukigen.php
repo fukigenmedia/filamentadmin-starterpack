@@ -31,8 +31,8 @@ if (!function_exists('fukigen_log')) {
             'action' => $action,
             'subject' => $subject,
 
-            'name' => auth()->user()->name,
-            'email' => auth()->user()->email,
+            'name' => auth()->user()->name ?? 'system',
+            'email' => auth()->user()->email ?? 'system',
 
             'url' => Request::fullUrl(),
             'method' => Request::method(),
