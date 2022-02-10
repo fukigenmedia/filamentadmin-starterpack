@@ -32,7 +32,10 @@ Usually, many of us are confused about where to start a new project. Because the
 ## Upgrade
 
 ```bash
+php artisan optimize:clear
 composer update
+php artisan filament:upgrade
+php artisan shield:upgrade
 ```
 
 ## Instalation
