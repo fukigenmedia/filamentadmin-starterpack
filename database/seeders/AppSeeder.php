@@ -18,9 +18,9 @@ class AppSeeder extends Seeder
         # USER
         $users = [
             [
-                'name' => 'Abela',
-                'email' => 'abelardhana96@gmail.com',
-                'password' => '$2y$10$EoaKVtezPUvs2LiGM4eOF.Z1rmAy0iaNzvkmsPUfICJbRM998JWYi',
+                'name' => 'Admin',
+                'email' => 'admin@app.com',
+                'password' => bcrypt('password'),
                 'email_verified_at' => now(),
                 'remember_token' => Str::random(10),
             ],
