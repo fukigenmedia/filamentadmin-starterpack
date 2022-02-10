@@ -16,21 +16,11 @@ use STS\FilamentImpersonate\Impersonate;
 
 class UserResource extends Resource
 {
-    protected static ?string $label = 'Pengguna';
-
-    protected static ?string $pluralLabel = 'Pengguna';
-
     protected static ?string $model = User::class;
-
-    protected static ?string $slug = 'akun/pengguna';
 
     protected static ?string $recordTitleAttribute = 'name';
 
-    protected static ?string $navigationGroup = 'Akun';
-
     protected static ?string $navigationIcon = 'heroicon-o-users';
-
-    protected static ?string $navigationLabel = 'Pengguna';
 
     protected static ?int $navigationSort = 0;
 
@@ -41,17 +31,17 @@ class UserResource extends Resource
                 Forms\Components\Card::make()
                     ->schema([
                         Forms\Components\TextInput::make('name')
-                            ->label('Nama')
+                            ->label(__('fukigen.users.field.name'))
                             ->maxLength(255)
                             ->required(),
                         Forms\Components\TextInput::make('email')
-                            ->label('Surel')
+                            ->label(__('fukigen.users.field.email'))
                             ->required()
                             ->email()
                             ->maxLength(255)
                             ->unique(User::class, 'email', fn ($record) => $record),
                         Forms\Components\TextInput::make('password')
-                            ->label('Kata Sandi')
+                            ->label(__('fukigen.users.field.password'))
                             ->password()
                             ->minLength(8)
                             ->maxLength(255)
@@ -59,18 +49,18 @@ class UserResource extends Resource
                             ->same('passwordConfirmation')
                             ->helperText(function (Component $livewire) {
                                 if ($livewire instanceof Pages\EditUser) {
-                                    return 'kosongkan jika tidak ingin mengubah.';
+                                    return __('fukigen.users.notification.password-helper');
                                 }
                             }),
                         Forms\Components\TextInput::make('passwordConfirmation')
-                            ->label('Konfirmasi Kata Sandi')
+                            ->label(__('fukigen.users.field.confirm-password'))
                             ->password()
                             ->minLength(8)
                             ->maxLength(255)
                             ->required(fn (Component $livewire): bool => $livewire instanceof Pages\CreateUser)
                             ->dehydrated(false),
                         Forms\Components\BelongsToManyMultiSelect::make('roles')
-                            ->label('Peran')
+                            ->label(__('fukigen.users.field.roles'))
                             ->relationship('roles', 'name')
                             ->required()
                     ])
@@ -81,10 +71,10 @@ class UserResource extends Resource
                 Forms\Components\Card::make()
                     ->schema([
                         Forms\Components\Placeholder::make('created_at')
-                            ->label('Dibuat')
+                            ->label(__('fukigen.users.field.created-at'))
                             ->content(fn (?User $record): string => $record ? $record->created_at->diffForHumans() : '-'),
                         Forms\Components\Placeholder::make('updated_at')
-                            ->label('Disunting')
+                            ->label(__('fukigen.users.field.updated-at'))
                             ->content(fn (?User $record): string => $record ? $record->updated_at->diffForHumans() : '-'),
                     ])
                     ->columnSpan(1),
@@ -99,15 +89,15 @@ class UserResource extends Resource
                 Tables\Columns\ImageColumn::make('avatar')
                     ->rounded(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Nama')
+                    ->label(__('fukigen.users.field.name'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('email')
-                    ->label('Surel')
+                    ->label(__('fukigen.users.field.email'))
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\BadgeColumn::make('roles.name')
-                    ->label('Peran')
+                    ->label(__('fukigen.users.field.roles'))
                     ->searchable()
                     ->sortable(),
             ])
@@ -133,5 +123,35 @@ class UserResource extends Resource
             'create' => Pages\CreateUser::route('/tambah'),
             'edit' => Pages\EditUser::route('/{record}/sunting'),
         ];
+    }
+
+    public static function getLabel(): string
+    {
+        return __('fukigen.users.resource.label');
+    }
+
+    public static function getPluralLabel(): string
+    {
+        return __('fukigen.users.resource.labels');
+    }
+
+    protected function getTitle(): string
+    {
+        return __('fukigen.users.resource.title');
+    }
+
+    public static function getSlug(): string
+    {
+        return __('fukigen.users.resource.slug');
+    }
+
+    protected static function getNavigationGroup(): ?string
+    {
+        return __('fukigen.users.resource.nav.group');
+    }
+
+    protected static function getNavigationLabel(): string
+    {
+        return __('fukigen.users.resource.nav.label');
     }
 }

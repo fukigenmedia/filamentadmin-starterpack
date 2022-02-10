@@ -49,4 +49,30 @@ return [
         'button' => [],
         'notification' => [],
     ],
+
+    'users' => [
+        'resource' => [
+            'label' => 'Pengguna',
+            'labels' => 'Data Pengguna',
+            'title' => 'Pengguna',
+            'slug' => 'akun/pengguna',
+            'nav' => [
+                'group' => 'Akun',
+                'label' => 'Pengguna',
+            ]
+        ],
+        'field' => [
+            'name' => 'Nama',
+            'email' => 'Surel',
+            'password' => 'Kata Sandi',
+            'confirm-password' => 'Konfirmasi Kata Sandi',
+            'roles' => 'Peran',
+            'created-at' => 'Dibuat',
+            'updated-at' => 'Disunting',
+        ],
+        'button' => [],
+        'notification' => [
+            'password-helper' => 'kosongkan jika tidak ingin mengubah.'
+        ],
+    ],
 ];

@@ -49,4 +49,30 @@ return [
         'button' => [],
         'notification' => [],
     ],
+
+    'users' => [
+        'resource' => [
+            'label' => 'User',
+            'labels' => 'Users',
+            'title' => 'Users',
+            'slug' => 'account/users',
+            'nav' => [
+                'group' => 'Account',
+                'label' => 'Users',
+            ]
+        ],
+        'field' => [
+            'name' => 'Name',
+            'email' => 'Email',
+            'password' => 'Password',
+            'confirm-password' => 'Confirm Password',
+            'roles' => 'Roles',
+            'created-at' => 'Created At',
+            'updated-at' => 'Updated At',
+        ],
+        'button' => [],
+        'notification' => [
+            'password-helper' => 'leave it blank if you don\'t want to change.'
+        ],
+    ],
 ];
