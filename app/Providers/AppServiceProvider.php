@@ -26,8 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        App::setLocale(setting('locale'));
-
         if (config('app.env') === 'production') {
             URL::forceScheme('https');
         }

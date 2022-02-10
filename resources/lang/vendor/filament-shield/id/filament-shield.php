@@ -8,7 +8,7 @@ return [
     */
 
     'column.name' => 'Nama',
-    'column.guard_name' => 'Guard',
+    'column.guard_name' => 'Penjaga',
     'column.roles' => 'Peran',
     'column.permissions' => 'Akses',
     'column.updated_at' => 'Disunting',
@@ -20,7 +20,7 @@ return [
     */
 
     'field.name' => 'Nama',
-    'field.guard_name' => 'Guard',
+    'field.guard_name' => 'Penjaga',
     'field.permissions' => 'Akses',
     'field.select_all.name' => 'Pilih Semua',
     'field.select_all.message' => 'Aktifkan semua Izin untuk peran ini',
@@ -43,7 +43,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'section' => 'Entitas',
-    'resources' => 'CRUD',
+    'resources' => 'Sumber Daya',
     'widgets' => 'Widget',
     'pages' => 'Halaman',
     'custom' => 'Izin Kustom',

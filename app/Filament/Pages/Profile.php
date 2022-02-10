@@ -7,26 +7,15 @@ use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Pages\Page;
 use Filament\Forms;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
 class Profile extends Page implements HasForms
 {
     use InteractsWithForms;
 
-    protected static ?string $label = 'Profil';
-
-    protected static ?string $title = 'Profil';
-
     protected static string $view = 'filament.pages.profile';
 
-    protected static ?string $navigationGroup = 'Akun';
-
     protected static ?string $navigationIcon = 'heroicon-o-user';
-
-    protected static ?string $navigationLabel = 'Profil';
-
-    protected static ?string $slug = 'akun/profil';
 
     protected static ?int $navigationSort = -1;
 
@@ -60,7 +49,7 @@ class Profile extends Page implements HasForms
         auth()->user()->update($state);
 
         $this->reset(['current_password', 'new_password', 'new_password_confirmation']);
-        $this->notify('success', 'Profil Anda telah diperbarui.');
+        $this->notify('success', __('fukigen.profile.notification.success'));
     }
 
     public function getCancelButtonUrlProperty()
@@ -83,11 +72,11 @@ class Profile extends Page implements HasForms
                         ->nullable()
                         ->columnSpan(2),
                     Forms\Components\TextInput::make('name')
-                        ->label('Nama')
+                        ->label(__('fukigen.profile.field.name'))
                         ->maxLength(255)
                         ->required(),
                     Forms\Components\TextInput::make('email')
-                        ->label('Surel')
+                        ->label(__('fukigen.profile.field.email'))
                         ->required()
                         ->email()
                         ->maxLength(255)
@@ -97,7 +86,7 @@ class Profile extends Page implements HasForms
                 ->columns(2)
                 ->schema([
                     Forms\Components\TextInput::make('current_password')
-                        ->label('Kata Sandi Sekarang')
+                        ->label(__('fukigen.profile.field.current-password'))
                         ->password()
                         ->minLength(8)
                         ->maxLength(255)
@@ -108,14 +97,14 @@ class Profile extends Page implements HasForms
                     Forms\Components\Grid::make()
                         ->schema([
                             Forms\Components\TextInput::make('new_password')
-                                ->label('Kata Sandi Baru')
+                                ->label(__('fukigen.profile.field.new-password'))
                                 ->password()
                                 ->minLength(8)
                                 ->maxLength(255)
                                 ->rules(['confirmed'])
                                 ->autocomplete('new-password'),
                             Forms\Components\TextInput::make('new_password_confirmation')
-                                ->label('Konfirmasi Kata Sandi')
+                                ->label(__('fukigen.profile.field.confirm-password'))
                                 ->password()
                                 ->minLength(8)
                                 ->maxLength(255)
@@ -126,5 +115,35 @@ class Profile extends Page implements HasForms
                         ]),
                 ]),
         ];
+    }
+
+    public static function getLabel(): string
+    {
+        return __('fukigen.profile.resource.label');
+    }
+
+    public static function getPluralLabel(): string
+    {
+        return __('fukigen.profile.resource.labels');
+    }
+
+    protected function getTitle(): string
+    {
+        return __('fukigen.profile.resource.title');
+    }
+
+    public static function getSlug(): string
+    {
+        return __('fukigen.profile.resource.slug');
+    }
+
+    protected static function getNavigationGroup(): ?string
+    {
+        return __('fukigen.profile.resource.nav.group');
+    }
+
+    protected static function getNavigationLabel(): string
+    {
+        return __('fukigen.profile.resource.nav.label');
     }
 }

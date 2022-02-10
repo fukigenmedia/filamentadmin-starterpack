@@ -41,9 +41,6 @@ class ManageSite extends SettingsPage
                     Forms\Components\TextInput::make('slogan')
                         ->label('Slogan')
                         ->nullable(),
-                    Forms\Components\TextInput::make('locale')
-                        ->label('Bahasa')
-                        ->required(),
                 ]),
 
             Forms\Components\Card::make()
