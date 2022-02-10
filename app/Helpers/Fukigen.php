@@ -1,5 +1,18 @@
 <?php
 
+/**
+ * --------------
+ * Fukigen Helper
+ * --------------
+ *
+ * Collection of helper functions that we usually use
+ * You can also add your helper function here
+ *
+ * by Fukigen Media
+ * https://github.com/fukigenmedia
+ */
+
+
 use App\Models\System\LogActivity;
 use App\Settings\SiteSettings;
 use Illuminate\Support\Facades\Request;
@@ -43,6 +56,14 @@ if (!function_exists('fukigen_log')) {
     }
 }
 
+/**
+ * Get manage site value easily
+ * by filament/spatie-laravel-settings-plugin
+ *
+ * @param string $setting - setting key
+ *
+ * @return string result
+ */
 if (!function_exists('setting')) {
     function setting($setting)
     {

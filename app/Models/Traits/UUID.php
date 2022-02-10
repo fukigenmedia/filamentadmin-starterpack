@@ -2,10 +2,10 @@
 
 /**
  * ------------
- * UUID Model
+ * UUID
  * ------------
  *
- * Create a UUID support model for the increment primary
+ * Create a UUID for the increment primary
  * by Fukigen Media
  * https://github.com/fukigenmedia
  */

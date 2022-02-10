@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * --------------
+ * LogActivities
+ * --------------
+ *
+ * Log user activiy for related model
+ * by Fukigen Media
+ * https://github.com/fukigenmedia
+ */
+
 namespace App\Models\Traits;
 
 trait LogActivities
