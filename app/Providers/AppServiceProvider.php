@@ -36,10 +36,6 @@ class AppServiceProvider extends ServiceProvider
             Filament::registerTheme(mix('css/app.css'));
         });
 
-        Filament::registerNavigationGroups([
-            'Akun',
-            'Sistem',
-            'Pengaturan',
-        ]);
+        Filament::registerNavigationGroups(__('fukigen.navigation'));
     }
 }
