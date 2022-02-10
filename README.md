@@ -2,7 +2,9 @@
 
 # Fukigen Filament Starterpack
 
-Easily start new projects using FukigenMedia's starterpack.
+> Easily start new projects using FukigenMedia's starterpack.
+
+Usually, many of us are confused about where to start a new project. Because there are too many packages that need to be installed, that's why we made this starterpack to make it easier for us and for you to start a new project.
 
 ## What's Inside?
 
@@ -29,7 +31,71 @@ Easily start new projects using FukigenMedia's starterpack.
 
 ## Upgrade
 
+```bash
+composer update
+```
+
+## Instalation
+
+1. Generate new repository with this template:
+   https://github.com/fukigenmedia/filamentadmin-starterpack/generate
+2. Install the package via composer:
+   ```bash
+    composer install
+    ```
+3. Compile all CSS and JS:
+    ```bash
+    npm install && npm run dev
+    ```
+4. Create copy of `.env` and generate laravel key:
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    php artisan storage:link
+    ```
+5. Configure your `.env` file:
+
+    We've added some new keys to make it easier for you to configure your app.
+
+    ```env
+    APP_LOCALE=en
+    APP_TIMEZONE=UCT
+
+    FILAMENTADMIN_EMAIL="@gmail.com"
+    ```
+6. Generate default permission and run migration:
+    ```bash
+    php artisan shield:install --fresh
+    ```
+
+    That command will flush all your table, and run some migration. After that you will be asked some questions, and generate new `super_admin` user.
+
+    If you get the question :
+
+    ```
+    Shield Resource already exists. Overwrite?
+    ````
+    Please, just answer `no` because the command will overwrite the existing file.
+7. Congratulation, you can access your application on `/app` route. 🔥
+
 ## Usage
+
+Now you can use the features of the TALL Stack and FilamentAdmin.
+
+- [Configure Admin Panel](https://filamentphp.com/docs/2.x/admin/dashboard)
+- [Create new resources](https://filamentphp.com/docs/2.x/admin/resources)
+- [Create pages](https://filamentphp.com/docs/2.x/admin/resources#pages)
+- and many more..
+
+After creating the resource, please run the following command to create a new permission:
+
+```bash
+php artisan shield:generate
+```
+
+Next, you can read each documentation of the related packages. Thank you! 🥳
+
+
 
 ## Testing
 
