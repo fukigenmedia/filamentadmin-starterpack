@@ -32,6 +32,7 @@ class Profile extends Page implements HasForms
 
     public $name;
     public $email;
+    public $avatar;
     public $current_password;
     public $new_password;
     public $new_password_confirmation;
@@ -41,6 +42,7 @@ class Profile extends Page implements HasForms
         $this->form->fill([
             'name' => auth()->user()->name,
             'email' => auth()->user()->email,
+            'avatar' => auth()->user()->avatar,
         ]);
     }
 
@@ -51,6 +53,7 @@ class Profile extends Page implements HasForms
         $state = array_filter([
             'name' => $this->name,
             'email' => $this->email,
+            'avatar' => current($this->avatar),
             'password' => $this->new_password ? Hash::make($this->new_password) : null,
         ]);
 
@@ -73,6 +76,12 @@ class Profile extends Page implements HasForms
             Forms\Components\Card::make()
                 ->columns(2)
                 ->schema([
+                    Forms\Components\FileUpload::make('avatar')
+                        ->directory('avatar')
+                        ->image()
+                        ->avatar()
+                        ->nullable()
+                        ->columnSpan(2),
                     Forms\Components\TextInput::make('name')
                         ->label('Nama')
                         ->maxLength(255)

@@ -96,6 +96,8 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('avatar')
+                    ->rounded(),
                 Tables\Columns\TextColumn::make('name')
                     ->label('Nama')
                     ->searchable()
@@ -107,10 +109,6 @@ class UserResource extends Resource
                 Tables\Columns\BadgeColumn::make('roles.name')
                     ->label('Peran')
                     ->searchable()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label('Bergabung')
-                    ->date('d/m/Y')
                     ->sortable(),
             ])
             ->filters([
