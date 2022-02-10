@@ -41,12 +41,8 @@ class ManageSite extends SettingsPage
                     Forms\Components\TextInput::make('slogan')
                         ->label('Slogan')
                         ->nullable(),
-                    Forms\Components\Select::make('locale')
+                    Forms\Components\TextInput::make('locale')
                         ->label('Bahasa')
-                        ->options([
-                            'en' => 'English',
-                            'id' => 'Indonesia',
-                        ])
                         ->required(),
                 ]),
 
