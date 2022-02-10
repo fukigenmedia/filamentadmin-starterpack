@@ -7,7 +7,27 @@ return [
     'actions' => [
 
         'create' => [
+
             'label' => 'Tambah :label',
+
+            'modal' => [
+
+                'heading' => 'Tambah :label',
+
+                'actions' => [
+
+                    'create' => [
+                        'label' => 'Tambah',
+                    ],
+
+                    'create_and_create_another' => [
+                        'label' => 'Tambah & tambah lainnya',
+                    ],
+
+                ],
+
+            ],
+
         ],
 
     ],
@@ -16,8 +36,28 @@ return [
 
         'actions' => [
 
+            'delete' => [
+                'label' => 'Hapus',
+            ],
+
             'edit' => [
+
                 'label' => 'Sunting',
+
+                'modal' => [
+
+                    'heading' => 'Sunting :label',
+
+                    'actions' => [
+
+                        'save' => [
+                            'label' => 'Simpan',
+                        ],
+
+                    ],
+
+                ],
+
             ],
 
             'view' => [
