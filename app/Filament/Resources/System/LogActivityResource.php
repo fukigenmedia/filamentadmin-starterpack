@@ -14,17 +14,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 class LogActivityResource extends Resource
 {
-    protected static ?string $label = 'Log Aktifitas';
-
-    protected static ?string $pluralLabel = 'Log Aktifitas';
-
-    protected static ?string $slug = 'sistem/log-aktifitas';
-
     protected static ?string $recordTitleAttribute = 'subject';
-
-    protected static ?string $navigationGroup = 'Sistem';
-
-    protected static ?string $navigationLabel = 'Log Aktifitas';
 
     protected static ?int $navigationSort = 0;
 
@@ -45,10 +35,10 @@ class LogActivityResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Nama Pengguna')
+                    ->label(__('fukigen.log-activities.field.username'))
                     ->searchable(),
                 Tables\Columns\BadgeColumn::make('action')
-                    ->label('Aksi')
+                    ->label(__('fukigen.log-activities.field.action'))
                     ->colors([
                         'secondary',
                         'primary' => 'create',
@@ -61,16 +51,16 @@ class LogActivityResource extends Resource
                         'delete' => 'DELETE',
                     ]),
                 Tables\Columns\TextColumn::make('subject')
-                    ->label('Informasi')
+                    ->label(__('fukigen.log-activities.field.information'))
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Waktu')
+                    ->label(__('fukigen.log-activities.field.time'))
                     ->sortable()
                     ->date('d/m/Y - H:i:s')
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('action')
-                    ->label('Aksi')
+                    ->label(__('fukigen.log-activities.filter.action'))
                     ->options([
                         'create' => 'Create',
                         'edit' => 'Edit',
@@ -79,11 +69,11 @@ class LogActivityResource extends Resource
                 Tables\Filters\Filter::make('published_at')
                     ->form([
                         Forms\Components\DatePicker::make('start_at')
-                            ->label('Tanggal Awal')
+                            ->label(__('fukigen.log-activities.filter.date-start'))
                             ->displayFormat('d/m/Y')
                             ->placeholder(fn ($state): string => now()->format('d/m/Y')),
                         Forms\Components\DatePicker::make('end_at')
-                            ->label('Tanggal Akhir')
+                            ->label(__('fukigen.log-activities.filter.date-end'))
                             ->displayFormat('d/m/Y')
                             ->placeholder(fn ($state): string => now()->format('d/m/Y')),
                     ])
@@ -113,5 +103,35 @@ class LogActivityResource extends Resource
         return [
             'index' => Pages\ListLogActivities::route('/'),
         ];
+    }
+
+    public static function getLabel(): string
+    {
+        return __('fukigen.log-activities.resource.label');
+    }
+
+    public static function getPluralLabel(): string
+    {
+        return __('fukigen.log-activities.resource.labels');
+    }
+
+    protected function getTitle(): string
+    {
+        return __('fukigen.log-activities.resource.title');
+    }
+
+    public static function getSlug(): string
+    {
+        return __('fukigen.log-activities.resource.slug');
+    }
+
+    protected static function getNavigationGroup(): ?string
+    {
+        return __('fukigen.log-activities.resource.nav.group');
+    }
+
+    protected static function getNavigationLabel(): string
+    {
+        return __('fukigen.log-activities.resource.nav.label');
     }
 }

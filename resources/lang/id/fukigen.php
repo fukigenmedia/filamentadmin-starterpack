@@ -75,4 +75,30 @@ return [
             'password-helper' => 'kosongkan jika tidak ingin mengubah.'
         ],
     ],
+
+    'log-activities' => [
+        'resource' => [
+            'label' => 'Log Aktifitas',
+            'labels' => 'Data Log Aktifitas',
+            'title' => 'Log Aktifitas',
+            'slug' => 'sistem/log-aktifitas',
+            'nav' => [
+                'group' => 'Sistem',
+                'label' => 'Log Aktifitas',
+            ]
+        ],
+        'field' => [
+            'username' => 'Nama Pengguna',
+            'action' => 'Aksi',
+            'information' => 'Informasi',
+            'time' => 'Waktu',
+        ],
+        'filter' => [
+            'action' => 'Aksi',
+            'date-start' => 'Tanggal Awal',
+            'date-end' => 'Tanggal Akhir',
+        ],
+        'button' => [],
+        'notification' => [],
+    ],
 ];

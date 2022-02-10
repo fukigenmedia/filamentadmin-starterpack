@@ -75,4 +75,30 @@ return [
             'password-helper' => 'leave it blank if you don\'t want to change.'
         ],
     ],
+
+    'log-activities' => [
+        'resource' => [
+            'label' => 'Log Activity',
+            'labels' => 'Log Activities',
+            'title' => 'Log Activity',
+            'slug' => 'system/log-activity',
+            'nav' => [
+                'group' => 'System',
+                'label' => 'Log Activities',
+            ]
+        ],
+        'field' => [
+            'username' => 'Username',
+            'action' => 'Action',
+            'information' => 'Information',
+            'time' => 'Time',
+        ],
+        'filter' => [
+            'action' => 'Action',
+            'date-start' => 'Date From',
+            'date-end' => 'Date Until',
+        ],
+        'button' => [],
+        'notification' => [],
+    ],
 ];
