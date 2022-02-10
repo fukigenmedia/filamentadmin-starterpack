@@ -21,8 +21,6 @@ class RoleResource extends Resource
 
     protected static ?int $navigationSort = -1;
 
-    protected static ?string $slug = 'akun/peran';
-
     protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
@@ -172,22 +170,32 @@ class RoleResource extends Resource
 
     public static function getLabel(): string
     {
-        return __('filament-shield::filament-shield.resource.label.role');
+        return __('fukigen.roles.resource.label');
     }
 
     public static function getPluralLabel(): string
     {
-        return __('filament-shield::filament-shield.resource.label.roles');
+        return __('fukigen.roles.resource.labels');
+    }
+
+    protected function getTitle(): string
+    {
+        return __('fukigen.roles.resource.title');
+    }
+
+    public static function getSlug(): string
+    {
+        return __('fukigen.roles.resource.slug');
     }
 
     protected static function getNavigationGroup(): ?string
     {
-        return __('filament-shield::filament-shield.nav.group');
+        return __('fukigen.roles.resource.nav.group');
     }
 
     protected static function getNavigationLabel(): string
     {
-        return __('filament-shield::filament-shield.nav.role.label');
+        return __('fukigen.roles.resource.nav.label');
     }
 
     protected static function getNavigationIcon(): string

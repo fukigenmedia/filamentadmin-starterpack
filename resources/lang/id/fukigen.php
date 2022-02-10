@@ -33,4 +33,20 @@ return [
             'success' => 'Profil Anda telah diperbarui.'
         ],
     ],
+
+    'roles' => [
+        'resource' => [
+            'label' => 'Peran',
+            'labels' => 'Data Peran',
+            'title' => 'Peran',
+            'slug' => 'akun/peran',
+            'nav' => [
+                'group' => 'Akun',
+                'label' => 'Peran',
+            ]
+        ],
+        'field' => [],
+        'button' => [],
+        'notification' => [],
+    ],
 ];

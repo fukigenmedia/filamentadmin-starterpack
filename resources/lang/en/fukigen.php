@@ -33,4 +33,20 @@ return [
             'success' => 'Your profile has been updated.'
         ],
     ],
+
+    'roles' => [
+        'resource' => [
+            'label' => 'Role',
+            'labels' => 'Roles',
+            'title' => 'Roles',
+            'slug' => 'account/roles',
+            'nav' => [
+                'group' => 'Account',
+                'label' => 'Roles',
+            ]
+        ],
+        'field' => [],
+        'button' => [],
+        'notification' => [],
+    ],
 ];
