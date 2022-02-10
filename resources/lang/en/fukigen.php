@@ -101,4 +101,33 @@ return [
         'button' => [],
         'notification' => [],
     ],
+
+    'setting' => [
+        'manage-site' => [
+            'resource' => [
+                'label' => 'Manage Site',
+                'labels' => 'Manage Site',
+                'title' => 'Manage Site',
+                'slug' => 'setting/site',
+                'nav' => [
+                    'group' => 'Setting',
+                    'label' => 'Site',
+                ]
+            ],
+            'field' => [
+                'general' => 'General',
+                'name' => 'Application Name',
+                'slogan' => 'Slogan',
+                'image' => 'Images',
+                'logo' => 'Application Logo',
+                'icon' => 'Application Icon',
+            ],
+            'filter' => [],
+            'button' => [
+                'save' => 'Save',
+                'cancel' => 'Cancel',
+            ],
+            'notification' => [],
+        ],
+    ],
 ];

@@ -101,4 +101,33 @@ return [
         'button' => [],
         'notification' => [],
     ],
+
+    'setting' => [
+        'manage-site' => [
+            'resource' => [
+                'label' => 'Pengaturan Situs',
+                'labels' => 'Pengaturan Situs',
+                'title' => 'Pengaturan Situs',
+                'slug' => 'pengaturan/situs',
+                'nav' => [
+                    'group' => 'Pengaturan',
+                    'label' => 'Situs',
+                ]
+            ],
+            'field' => [
+                'general' => 'Umum',
+                'name' => 'Nama Aplikasi',
+                'slogan' => 'Slogan',
+                'image' => 'Gambar',
+                'logo' => 'Logo Aplikasi',
+                'icon' => 'Ikon Aplikasi',
+            ],
+            'filter' => [],
+            'button' => [
+                'save' => 'Simpan',
+                'cancel' => 'Batal',
+            ],
+            'notification' => [],
+        ],
+    ],
 ];

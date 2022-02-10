@@ -33,28 +33,28 @@ class ManageSite extends SettingsPage
             Forms\Components\Card::make()
                 ->columns(2)
                 ->schema([
-                    Forms\Components\Placeholder::make('Umum')
+                    Forms\Components\Placeholder::make(__('fukigen.setting.manage-site.field.general'))
                         ->columnSpan(2),
                     Forms\Components\TextInput::make('name')
-                        ->label('Nama Aplikasi')
+                        ->label(__('fukigen.setting.manage-site.field.name'))
                         ->required(),
                     Forms\Components\TextInput::make('slogan')
-                        ->label('Slogan')
+                        ->label(__('fukigen.setting.manage-site.field.slogan'))
                         ->nullable(),
                 ]),
 
             Forms\Components\Card::make()
                 ->columns(2)
                 ->schema([
-                    Forms\Components\Placeholder::make('Logo')
+                    Forms\Components\Placeholder::make(__('fukigen.setting.manage-site.field.image'))
                         ->columnSpan(2),
                     Forms\Components\FileUpload::make('logo')
-                        ->label('Logo Aplikasi')
+                        ->label(__('fukigen.setting.manage-site.field.logo'))
                         ->directory('system')
                         ->image()
                         ->nullable(),
                     Forms\Components\FileUpload::make('favico')
-                        ->label('Ikon Aplikasi')
+                        ->label(__('fukigen.setting.manage-site.field.icon'))
                         ->directory('system')
                         ->image()
                         ->nullable(),
@@ -67,7 +67,7 @@ class ManageSite extends SettingsPage
     {
         return [
             ButtonAction::make('save')
-                ->label('Simpan')
+                ->label(__('fukigen.setting.manage-site.button.save'))
                 ->submit('save'),
         ];
     }
@@ -87,5 +87,35 @@ class ManageSite extends SettingsPage
     protected static function shouldRegisterNavigation(): bool
     {
         return static::canAccessSettings();
+    }
+
+    public static function getLabel(): string
+    {
+        return __('fukigen.setting.manage-site.resource.label');
+    }
+
+    public static function getPluralLabel(): string
+    {
+        return __('fukigen.setting.manage-site.resource.labels');
+    }
+
+    protected function getTitle(): string
+    {
+        return __('fukigen.setting.manage-site.resource.title');
+    }
+
+    public static function getSlug(): string
+    {
+        return __('fukigen.setting.manage-site.resource.slug');
+    }
+
+    protected static function getNavigationGroup(): ?string
+    {
+        return __('fukigen.setting.manage-site.resource.nav.group');
+    }
+
+    protected static function getNavigationLabel(): string
+    {
+        return __('fukigen.setting.manage-site.resource.nav.label');
     }
 }
